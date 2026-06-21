@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Allan Career Hacks Wiki | Candid Leap Wisdom</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="description" content="Technical overview of the Allan Career Hacks collection, signup flow, quote bank, and maintenance process.">
+    <link rel="canonical" href="https://wisdom.candidleap.com/allan/wiki/">
+    <style>
+      :root {
+        --ink: #101513;
+        --muted: #4f5d58;
+        --paper: #fbfaf4;
+        --surface: #ffffff;
+        --soft: #edf5f1;
+        --line: #dbe4dc;
+        --green: #116f64;
+        --green-soft: #dff0ea;
+        --yellow: #fec800;
+        --coral: #bf5a3b;
+        --blue: #2d5f83;
+        --shadow: 0 14px 34px rgba(16, 21, 19, 0.06);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        overflow-x: hidden;
+      }
+
+      a {
+        color: var(--green);
+        font-weight: 760;
+        text-underline-offset: 4px;
+        overflow-wrap: anywhere;
+      }
+
+      code {
+        border-radius: 5px;
+        background: #eef4f0;
+        color: #18362f;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.93em;
+        padding: 0.1em 0.34em;
+      }
+
+      pre {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #12211e;
+        color: #effaf5;
+        padding: 16px;
+      }
+
+      pre code {
+        background: transparent;
+        color: inherit;
+        padding: 0;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(16, 21, 19, 0.1);
+        background: rgba(251, 250, 244, 0.9);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 8px 24px rgba(20, 31, 29, 0.04);
+      }
+
+      .inner,
+      .header-inner {
+        width: calc(100% - 40px);
+        max-width: 1160px;
+        margin: 0 auto;
+        min-width: 0;
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 999px;
+        color: var(--ink);
+        font-weight: 860;
+        padding: 6px 8px 6px 0;
+        text-decoration: none;
+      }
+
+      .logo img {
+        width: 66px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+        border: 1px solid rgba(20, 31, 29, 0.1);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 10px 24px rgba(20, 31, 29, 0.05);
+        padding: 5px;
+      }
+
+      .nav a {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        border-radius: 999px;
+        color: var(--teal);
+        font-size: 0.9rem;
+        font-weight: 850;
+        padding: 0 13px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible,
+      .nav a[aria-current="page"] {
+        background: var(--soft);
+        outline: none;
+      }
+
+      .corn-link {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgba(20, 31, 29, 0.12);
+        border-radius: 999px;
+        background: #fff8d4;
+        box-shadow: 0 14px 30px rgba(20, 31, 29, 0.14);
+        font-size: 1.35rem;
+        margin: 0 18px 18px auto;
+        text-decoration: none;
+      }
+
+      .intro-band {
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #fbfaf4 0%, #f5faf7 100%);
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 48px;
+        align-items: center;
+        padding: 66px 0 54px;
+      }
+
+      h1 {
+        max-width: 860px;
+        margin: 0;
+        font-size: 4.6rem;
+        font-weight: 860;
+        letter-spacing: 0;
+        line-height: 0.96;
+      }
+
+      .lede {
+        max-width: 740px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 1.22rem;
+      }
+
+      .portrait {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 16px;
+        align-items: center;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 14px;
+        box-shadow: var(--shadow);
+      }
+
+      .portrait img {
+        width: 96px;
+        height: 96px;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .portrait strong {
+        display: block;
+        font-size: 1.05rem;
+      }
+
+      .portrait span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .section {
+        padding: 48px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section.soft {
+        background: var(--soft);
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1.08rem;
+      }
+
+      p {
+        margin: 0 0 16px;
+        overflow-wrap: anywhere;
+      }
+
+      h1,
+      h2,
+      h3,
+      li,
+      td,
+      th {
+        overflow-wrap: anywhere;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .tile {
+        min-width: 0;
+        border: 1px solid rgba(16, 21, 19, 0.12);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .tile p,
+      .tile li {
+        color: var(--muted);
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        align-items: stretch;
+        margin-top: 22px;
+      }
+
+      .flow-step {
+        position: relative;
+        min-width: 0;
+        min-height: 142px;
+        border: 1px solid rgba(17, 111, 100, 0.22);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 16px;
+        box-shadow: var(--shadow);
+      }
+
+      .flow-step:not(:last-child)::after {
+        content: "->";
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        z-index: 2;
+        color: var(--green);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 900;
+        transform: translateY(-50%);
+      }
+
+      .flow.vertical {
+        grid-template-columns: 1fr;
+      }
+
+      .flow.vertical .flow-step:not(:last-child)::after {
+        content: "v";
+        top: auto;
+        right: 16px;
+        bottom: -22px;
+        transform: none;
+      }
+
+      .flow-step strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--green);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .flow-step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 720px;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        padding: 14px 16px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--green);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .status-list {
+        display: grid;
+        gap: 12px;
+        padding: 0;
+        list-style: none;
+      }
+
+      .status-list li {
+        border-left: 4px solid var(--green);
+        background: rgba(255, 255, 255, 0.72);
+        padding: 10px 0 10px 14px;
+      }
+
+      .status-list li.warning {
+        border-left-color: var(--coral);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 12px;
+        counter-reset: steps;
+        list-style: none;
+        padding: 0;
+      }
+
+      .checklist li {
+        position: relative;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 16px 16px 16px 58px;
+        box-shadow: var(--shadow);
+      }
+
+      .checklist li::before {
+        counter-increment: steps;
+        content: counter(steps);
+        position: absolute;
+        left: 16px;
+        top: 16px;
+        display: grid;
+        width: 28px;
+        height: 28px;
+        place-items: center;
+        border-radius: 999px;
+        background: var(--green);
+        color: #fff;
+        font-weight: 860;
+      }
+
+      .footer {
+        padding: 34px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .intro,
+        .two-col,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 3.2rem;
+        }
+
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .flow-step:not(:last-child)::after {
+          content: "v";
+          top: auto;
+          right: 16px;
+          bottom: -22px;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .inner,
+        .header-inner {
+          width: calc(100% - 48px);
+          max-width: 1160px;
+        }
+
+        .header-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .nav {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+          border-radius: 8px;
+        }
+
+        h1 {
+          max-width: 9.5ch;
+          font-size: 2rem;
+          line-height: 1.02;
+        }
+
+        .lede {
+          font-size: 1.05rem;
+        }
+
+        .intro {
+          padding: 40px 0;
+        }
+
+        .portrait {
+          grid-template-columns: 76px minmax(0, 1fr);
+        }
+
+        .portrait img {
+          width: 76px;
+          height: 76px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="/allan/">
+          <img src="https://cdn.prod.website-files.com/6852663ac5e075023e2e3648/6852663ac5e075023e2e384f_CL-Logo.svg" alt="Candid Leap">
+          <span>Wisdom Wiki</span>
+        </a>
+        <nav class="nav" aria-label="Wiki navigation">
+          <a href="/allan/">Collection</a>
+          <a href="/sign-up/">Sign up</a>
+          <a href="/allan/quotes.md">Quote bank</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-band">
+        <div class="intro inner">
+          <div>
+            <h1>Allan Career Hacks system wiki</h1>
+            <p class="lede">A plain-English map of the noindexed wisdom collection, signup flow, quote bank, daily monitoring workflow, and maintenance steps behind <a href="/allan/">wisdom.candidleap.com/allan</a>.</p>
+          </div>
+          <aside class="portrait" aria-label="Collection owner and subject">
+            <img src="https://cdn.prod.website-files.com/663bb357efba241b47d6930b/66bd6b4120f3b7cc917291ee_Allan-Leinwand.webp" alt="Allan Leinwand">
+            <div>
+              <strong>Allan Leinwand</strong>
+              <span>Career Hack source material collected by Hal for Candid Leap teammates and others.</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>What This Tool Does</h2>
+          <div class="grid">
+            <article class="tile">
+              <h3>Readable Collection</h3>
+              <p>The main page shows Allan's Career Hack posts as a timeline and lets people search or filter by topic.</p>
+            </article>
+            <article class="tile">
+              <h3>AI Advice Prompt</h3>
+              <p>The Ask Allan tool copies a prompt for Codex or Claude Code and points models to a clean Markdown quote bank so advice can cite real Allan quotes.</p>
+            </article>
+            <article class="tile">
+              <h3>Subscriber Intake</h3>
+              <p>The signup page sends name and email directly to Resend. There is no D1 subscriber database and no local raw PII store.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner">
+          <h2>Architecture Map</h2>
+          <p>This is the current shape of the system. The browser-facing pages are static files, while signup uses a Cloudflare Pages Function to talk to Resend.</p>
+          <div class="flow" aria-label="Architecture flow chart">
+            <div class="flow-step">
+              <strong>Sources</strong>
+              <p>LinkedIn and X posts from Allan are found manually and by the daily monitor skill.</p>
+            </div>
+            <div class="flow-step">
+              <strong>Collection</strong>
+              <p><code>public/allan/index.html</code> stores the visual page and the post JSON used by the page.</p>
+            </div>
+            <div class="flow-step">
+              <strong>Quote Bank</strong>
+              <p><code>scripts/export-quotes.mjs</code> generates <code>quotes.md</code> and <code>quotes.json</code> for AI and automation.</p>
+            </div>
+            <div class="flow-step">
+              <strong>Cloudflare</strong>
+              <p>Cloudflare Pages serves the static site and runs <code>/api/subscribe</code>.</p>
+            </div>
+            <div class="flow-step">
+              <strong>Resend</strong>
+              <p>Resend stores subscriber contacts in the <code>Allan Career Hacks</code> segment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>Public Routes</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Purpose</th>
+                  <th>Backed By</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="/allan/">/allan/</a></td>
+                  <td>Main reading experience, filters, source links, Ask Allan prompt, and skill install link.</td>
+                  <td><code>public/allan/index.html</code></td>
+                </tr>
+                <tr>
+                  <td><a href="/allan/quotes.md">/allan/quotes.md</a></td>
+                  <td>Markdown quote bank for Codex, Claude Code, and other AI tools.</td>
+                  <td><code>scripts/export-quotes.mjs</code></td>
+                </tr>
+                <tr>
+                  <td><a href="/allan/quotes.json">/allan/quotes.json</a></td>
+                  <td>Structured quote data for scripts or future automation.</td>
+                  <td><code>scripts/export-quotes.mjs</code></td>
+                </tr>
+                <tr>
+                  <td><a href="/sign-up/">/sign-up/</a></td>
+                  <td>Signup form for people who want future Allan Career Hack updates.</td>
+                  <td><code>public/sign-up/index.html</code></td>
+                </tr>
+                <tr>
+                  <td><code>/api/subscribe</code></td>
+                  <td>Validates signup input, creates or updates the Resend contact, and adds it to the segment.</td>
+                  <td><code>functions/api/subscribe.js</code></td>
+                </tr>
+                <tr>
+                  <td><a href="/allan/wiki/">/allan/wiki/</a></td>
+                  <td>This operational overview.</td>
+                  <td><code>public/allan/wiki/index.html</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner two-col">
+          <div>
+            <h2>Subscriber Flow</h2>
+            <p>Subscriber data goes directly to Resend. Cloudflare receives the request transiently, validates it, and forwards it to Resend using the encrypted Pages secret.</p>
+            <div class="flow vertical" aria-label="Signup sequence">
+              <div class="flow-step"><strong>1. Visitor</strong><p>Submits name and email on <code>/sign-up/</code>.</p></div>
+              <div class="flow-step"><strong>2. Pages Function</strong><p><code>/api/subscribe</code> normalizes the email, checks a honeypot, and rejects invalid input.</p></div>
+              <div class="flow-step"><strong>3. Resend</strong><p>The contact is created or updated and placed in the <code>Allan Career Hacks</code> segment.</p></div>
+            </div>
+          </div>
+          <div>
+            <h2>Current Status</h2>
+            <ul class="status-list">
+              <li><strong>Live:</strong> Main collection, noindex headers, Ask Allan prompt, quote bank, signup form, and Resend contact capture.</li>
+              <li><strong>Live:</strong> <code>RESEND_API_KEY</code> is installed as an encrypted Cloudflare Pages production secret.</li>
+              <li class="warning"><strong>Recommended next:</strong> Add Cloudflare Turnstile before sharing the signup page broadly.</li>
+              <li class="warning"><strong>Recommended next:</strong> Connect the daily monitor to send public broadcasts through Resend when new quotes are added.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>How To Update Quotes</h2>
+          <ol class="checklist">
+            <li><strong>Find and verify the post.</strong> Use Allan's LinkedIn activity, X profile, and Google searches scoped to LinkedIn/X. Confirm the text, date, source URL, and whether it starts with "Career hack".</li>
+            <li><strong>Edit the source data.</strong> Add the new post to the <code>postsData</code> JSON inside <code>public/allan/index.html</code>. Keep newest posts first.</li>
+            <li><strong>Regenerate AI files.</strong> Run <code>node scripts/export-quotes.mjs</code> so <code>quotes.md</code> and <code>quotes.json</code> match the visual page.</li>
+            <li><strong>Verify locally by script.</strong> Parse the page script with Node, check quote count, and confirm the latest post appears in both the page and quote bank.</li>
+            <li><strong>Deploy.</strong> Run <code>npx wrangler pages deploy public --project-name wisdom --branch main</code>.</li>
+            <li><strong>Smoke test production.</strong> Check <code>/allan/</code>, <code>/allan/quotes.md</code>, <code>/sign-up/</code>, and a safe test request to <code>/api/subscribe</code>.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner two-col">
+          <div>
+            <h2>Daily Monitor</h2>
+            <p>The Codex skill <code>monitor-allan-career-hacks</code> contains the search playbook for finding new Allan posts. The daily automation runs with high reasoning effort and should:</p>
+            <ul>
+              <li>Search LinkedIn, X, and Google with the prescribed query families.</li>
+              <li>Deduplicate by source URL and activity ID.</li>
+              <li>Add verified new quotes to the site.</li>
+              <li>Regenerate the quote bank and deploy.</li>
+              <li>Email Hal when a new quote is found.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>Important Warnings</h2>
+            <ul>
+              <li>Do not commit or print <code>RESEND_API_KEY</code>. Cloudflare can list that the secret exists, but it cannot reveal the value.</li>
+              <li>The entire subdomain is intentionally noindexed through <code>public/_headers</code> and page-level robots tags.</li>
+              <li>There is no D1 subscriber table. Resend is the source of truth for subscriber PII.</li>
+              <li>The signup endpoint logs only operational errors. Avoid adding request-body logging.</li>
+              <li>Resend's segment/contact API shape may change over time; test <code>/api/subscribe</code> after dependency or provider changes.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>Useful Commands</h2>
+          <pre><code>node scripts/export-quotes.mjs
+node --check functions/api/subscribe.js
+npx wrangler pages secret list --project-name wisdom
+npx wrangler pages deploy public --project-name wisdom --branch main
+curl -sS https://wisdom.candidleap.com/allan/quotes.md | head
+curl -sS -X POST https://wisdom.candidleap.com/api/subscribe \
+  -H 'content-type: application/json' \
+  --data '{"name":"Test User","email":"test@example.com","website":""}'</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="inner">
+        <p>This wiki is intentionally lightweight: enough for a technical teammate to understand the system, update it safely, and know where the sharp edges are.</p>
+      </div>
+    </footer>
+    <a class="corn-link" href="/allan/next-steps/" aria-label="Open next steps">🌽</a>
+  </body>
+</html>

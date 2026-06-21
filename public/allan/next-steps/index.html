@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Allan Career Hacks Next Steps | Candid Leap Wisdom</title>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="description" content="Interactive next steps and deep review checklist for the Allan Career Hacks wisdom tool.">
+    <link rel="canonical" href="https://wisdom.candidleap.com/allan/next-steps/">
+    <style>
+      :root {
+        --ink: #101513;
+        --muted: #4f5d58;
+        --paper: #fbfaf4;
+        --surface: #ffffff;
+        --soft: #edf5f1;
+        --line: #dbe4dc;
+        --green: #116f64;
+        --green-soft: #dff0ea;
+        --yellow: #fec800;
+        --coral: #bf5a3b;
+        --blue: #2d5f83;
+        --shadow: 0 14px 34px rgba(16, 21, 19, 0.06);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+      }
+
+      a {
+        color: var(--green);
+        font-weight: 760;
+        text-underline-offset: 4px;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      code {
+        border-radius: 5px;
+        background: #eef4f0;
+        color: #18362f;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.93em;
+        padding: 0.1em 0.34em;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(16, 21, 19, 0.1);
+        background: rgba(251, 250, 244, 0.9);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 8px 24px rgba(20, 31, 29, 0.04);
+      }
+
+      .inner,
+      .header-inner {
+        width: calc(100% - 40px);
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 999px;
+        color: var(--ink);
+        font-weight: 860;
+        padding: 6px 8px 6px 0;
+        text-decoration: none;
+      }
+
+      .logo img {
+        width: 66px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+        border: 1px solid rgba(20, 31, 29, 0.1);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 10px 24px rgba(20, 31, 29, 0.05);
+        padding: 5px;
+      }
+
+      .nav a {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        border-radius: 999px;
+        color: var(--teal);
+        font-size: 0.9rem;
+        font-weight: 850;
+        padding: 0 13px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        background: var(--soft);
+        outline: none;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #fbfaf4 0%, #f5faf7 100%);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 330px;
+        gap: 48px;
+        align-items: center;
+        padding: 62px 0 48px;
+      }
+
+      h1 {
+        max-width: 880px;
+        margin: 0;
+        font-size: 4.2rem;
+        font-weight: 860;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      .lede {
+        max-width: 760px;
+        margin: 22px 0 0;
+        color: var(--muted);
+        font-size: 1.18rem;
+      }
+
+      .status-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .status-card strong {
+        display: block;
+        color: var(--green);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .progress-number {
+        display: block;
+        margin-top: 8px;
+        font-size: 3rem;
+        font-weight: 860;
+        line-height: 1;
+      }
+
+      .meter {
+        width: 100%;
+        height: 10px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e2ece7;
+        margin: 16px 0 10px;
+      }
+
+      .meter-fill {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--green);
+        transition: width 160ms ease;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .action-button,
+      .filter-button {
+        min-height: 40px;
+        border: 1px solid rgba(17, 111, 100, 0.28);
+        border-radius: 8px;
+        background: var(--surface);
+        color: var(--green);
+        cursor: pointer;
+        font-weight: 780;
+        padding: 0 13px;
+      }
+
+      .action-button.primary,
+      .filter-button[aria-pressed="true"] {
+        border-color: var(--green);
+        background: var(--green);
+        color: #fff;
+      }
+
+      .section {
+        padding: 42px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section.soft {
+        background: var(--soft);
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 2rem;
+        line-height: 1.1;
+      }
+
+      .section-intro {
+        max-width: 840px;
+        margin: 0 0 22px;
+        color: var(--muted);
+      }
+
+      .filter-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin: 20px 0 4px;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 14px;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 14px;
+        border: 1px solid rgba(16, 21, 19, 0.12);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .item[data-done="true"] {
+        opacity: 0.66;
+      }
+
+      .item[data-hidden="true"] {
+        display: none;
+      }
+
+      .item input {
+        width: 24px;
+        height: 24px;
+        margin: 2px 0 0;
+        accent-color: var(--green);
+      }
+
+      .item h3 {
+        margin: 0;
+        font-size: 1.08rem;
+      }
+
+      .item p {
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .pill {
+        display: inline-flex;
+        min-height: 28px;
+        align-items: center;
+        border-radius: 999px;
+        background: #edf5f8;
+        color: var(--blue);
+        font-size: 0.78rem;
+        font-weight: 820;
+        padding: 0 10px;
+      }
+
+      .pill.now { background: #f7edd9; color: #8a4b0f; }
+      .pill.next { background: var(--green-soft); color: var(--green); }
+      .pill.later { background: #edf1f5; color: #345466; }
+      .pill.watch { background: #f7e8e3; color: #954328; }
+
+      .map {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .map-node {
+        position: relative;
+        min-height: 128px;
+        border: 1px solid rgba(17, 111, 100, 0.22);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 15px;
+        box-shadow: var(--shadow);
+      }
+
+      .map-node:not(:last-child)::after {
+        content: "->";
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        z-index: 1;
+        color: var(--green);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-weight: 900;
+        transform: translateY(-50%);
+      }
+
+      .map-node strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--green);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .map-node p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .note-box {
+        border-left: 4px solid var(--yellow);
+        background: rgba(255, 255, 255, 0.72);
+        padding: 14px 16px;
+      }
+
+      .note-box p {
+        margin: 0;
+      }
+
+      .status-line {
+        min-height: 24px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        margin-top: 10px;
+      }
+
+      .footer {
+        padding: 32px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero-inner,
+        .map {
+          grid-template-columns: 1fr;
+        }
+
+        .map-node:not(:last-child)::after {
+          content: "v";
+          top: auto;
+          right: 16px;
+          bottom: -22px;
+          transform: none;
+        }
+
+        h1 {
+          font-size: 3.05rem;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .inner,
+        .header-inner {
+          width: calc(100% - 32px);
+        }
+
+        .header-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .nav {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+          border-radius: 8px;
+        }
+
+        h1 {
+          font-size: 2.2rem;
+          line-height: 1.04;
+        }
+
+        .hero-inner {
+          padding: 40px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="/allan/">
+          <img src="https://cdn.prod.website-files.com/6852663ac5e075023e2e3648/6852663ac5e075023e2e384f_CL-Logo.svg" alt="Candid Leap">
+          <span>Next Steps</span>
+        </a>
+        <nav class="nav" aria-label="Next steps navigation">
+          <a href="/allan/">Collection</a>
+          <a href="/allan/wiki/">Wiki</a>
+          <a href="/sign-up/">Sign up</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner inner">
+          <div>
+            <h1>Allan tool next steps</h1>
+            <p class="lede">A deep review turned into an interactive checklist. Use this page to improve navigation, strengthen delivery, and keep the quote collection easy to maintain.</p>
+            <div class="actions">
+              <button class="action-button primary" id="copyOpenItems" type="button">Copy Open Items</button>
+              <button class="action-button" id="toggleCompleted" type="button" aria-pressed="false">Hide Completed</button>
+              <button class="action-button" id="resetChecks" type="button">Reset Checks</button>
+            </div>
+            <p class="status-line" id="copyStatus" aria-live="polite"></p>
+          </div>
+          <aside class="status-card" aria-label="Checklist progress">
+            <strong>Progress</strong>
+            <span class="progress-number" id="progressNumber">0/0</span>
+            <div class="meter" aria-hidden="true"><div class="meter-fill" id="meterFill"></div></div>
+            <p id="progressText">Nothing checked yet.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner">
+          <h2>Navigation Review</h2>
+          <p class="section-intro">The main opportunity is to make the tool feel less like a set of separate pages and more like one small product. Right now the pieces work, but navigation can better reveal the intended path.</p>
+          <div class="map" aria-label="Recommended navigation flow">
+            <div class="map-node"><strong>Start</strong><p><a href="/allan/">/allan/</a> should explain what exists and offer the two natural actions: ask a question or subscribe.</p></div>
+            <div class="map-node"><strong>Read</strong><p>The filters should lead directly into the complete quote list, with all posts included in search and topic counts.</p></div>
+            <div class="map-node"><strong>Use AI</strong><p>The Ask Allan area should point models to <code>quotes.md</code> and make copy/open flows obvious.</p></div>
+            <div class="map-node"><strong>Subscribe</strong><p>Signup should be a clear CTA from the collection, not only a nav link.</p></div>
+            <div class="map-node"><strong>Maintain</strong><p>Wiki and next steps should be reachable, but quiet enough that casual readers ignore them.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner">
+          <h2>Checklist</h2>
+          <p class="section-intro">These are the highest-signal improvements I would make after reviewing the site, automation, signup flow, and maintenance story.</p>
+          <div class="filter-row" aria-label="Checklist filters">
+            <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="now" aria-pressed="false">Do Now</button>
+            <button class="filter-button" type="button" data-filter="next" aria-pressed="false">Do Next</button>
+            <button class="filter-button" type="button" data-filter="later" aria-pressed="false">Polish</button>
+            <button class="filter-button" type="button" data-filter="watch" aria-pressed="false">Watch</button>
+          </div>
+          <div class="checklist" id="checklist">
+            <article class="item" data-id="resend-broadcasts" data-priority="now">
+              <input type="checkbox" aria-label="Wire Resend broadcasts">
+              <div>
+                <h3>Wire new-quote emails to Resend Broadcasts</h3>
+                <p>Signup already adds contacts to the Resend segment. The missing production piece is sending new Allan quotes to that segment when the monitor adds a post.</p>
+                <div class="meta"><span class="pill now">Do Now</span><span class="pill">Email Delivery</span><span class="pill">Highest Leverage</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="turnstile" data-priority="now">
+              <input type="checkbox" aria-label="Add Turnstile to signup">
+              <div>
+                <h3>Add Cloudflare Turnstile to the signup form</h3>
+                <p>The current honeypot is fine while traffic is low, but Turnstile should be added before sharing the page widely.</p>
+                <div class="meta"><span class="pill now">Do Now</span><span class="pill">Security</span><span class="pill">Signup</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="cta-placement" data-priority="now">
+              <input type="checkbox" aria-label="Add stronger signup CTA">
+              <div>
+                <h3>Add a stronger signup CTA on the Allan page</h3>
+                <p>The nav now says “Subscribe.” A contextual CTA near the Ask Allan section could make the inbox option easier to discover without crowding the quote list.</p>
+                <div class="meta"><span class="pill now">Do Now</span><span class="pill">Navigation</span><span class="pill">Conversion</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="mobile-nav" data-priority="next">
+              <input type="checkbox" aria-label="Simplify mobile navigation">
+              <div>
+                <h3>Simplify mobile navigation into reader/admin groups</h3>
+                <p>Reader links should stay primary: Collection, Subscribe, Quote bank, and Ask Allan. Admin links like the wiki should stay quiet.</p>
+                <div class="meta"><span class="pill next">Do Next</span><span class="pill">Navigation</span><span class="pill">Mobile</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="ask-allan-placement" data-priority="next">
+              <input type="checkbox" aria-label="Make Ask Allan easier to find">
+              <div>
+                <h3>Make Ask Allan easier to find after reading a quote</h3>
+                <p>Consider a compact “Ask Allan about this” action below selected cards that preloads the quote context.</p>
+                <div class="meta"><span class="pill next">Do Next</span><span class="pill">AI Workflow</span><span class="pill">Reading Flow</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="source-trust" data-priority="next">
+              <input type="checkbox" aria-label="Add source confidence labels">
+              <div>
+                <h3>Add source confidence or verification notes</h3>
+                <p>The collection is manually curated. A small “verified from original LinkedIn/X URL” note in the wiki or quote bank would help future maintainers trust the data.</p>
+                <div class="meta"><span class="pill next">Do Next</span><span class="pill">Data Quality</span><span class="pill">Maintenance</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="admin-docs" data-priority="next">
+              <input type="checkbox" aria-label="Add admin checklist to wiki">
+              <div>
+                <h3>Add a short admin checklist at the top of the wiki</h3>
+                <p>The wiki is good as reference. A top “When a new quote appears, do these six things” checklist would make it even faster for a new technical person.</p>
+                <div class="meta"><span class="pill next">Do Next</span><span class="pill">Docs</span><span class="pill">Operations</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="resend-webhooks" data-priority="later">
+              <input type="checkbox" aria-label="Consider Resend webhooks">
+              <div>
+                <h3>Consider lightweight Resend webhook logging later</h3>
+                <p>No D1 is the right v1 choice. If subscriber counts grow, capture non-sensitive delivery metrics or unsubscribe counts for visibility.</p>
+                <div class="meta"><span class="pill later">Polish</span><span class="pill">Observability</span><span class="pill">Resend</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="topic-system" data-priority="later">
+              <input type="checkbox" aria-label="Normalize topic tagging">
+              <div>
+                <h3>Normalize topic tagging rules</h3>
+                <p>The current topics are useful. Future updates should have a small tagging guide so similar quotes do not drift across categories.</p>
+                <div class="meta"><span class="pill later">Polish</span><span class="pill">Content</span><span class="pill">Filters</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="search-backfill" data-priority="watch">
+              <input type="checkbox" aria-label="Repeat completeness backfill">
+              <div>
+                <h3>Repeat completeness backfill monthly</h3>
+                <p>Public search cannot prove deleted, login-only, or never-indexed posts do not exist. A monthly backfill sweep is a healthy habit.</p>
+                <div class="meta"><span class="pill watch">Watch</span><span class="pill">Search</span><span class="pill">Completeness</span></div>
+              </div>
+            </article>
+
+            <article class="item" data-id="git-identity" data-priority="watch">
+              <input type="checkbox" aria-label="Set git author identity">
+              <div>
+                <h3>Set the Git author identity</h3>
+                <p>The latest commit used the local auto identity. It is harmless, but setting the repo/global Git name and email would make future history cleaner.</p>
+                <div class="meta"><span class="pill watch">Watch</span><span class="pill">Repo Hygiene</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner">
+          <h2>My Opinionated Roadmap</h2>
+          <div class="note-box">
+            <p>Best sequence: ship Turnstile, then Resend Broadcasts, then improve Allan-page CTA placement. After that, the tool is sturdy enough for real external sharing. The rest is mostly refinement.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="inner">
+        <p>Checkboxes are stored only in this browser with <code>localStorage</code>. Nothing on this page writes to Cloudflare, Resend, or GitHub.</p>
+      </div>
+    </footer>
+
+    <script>
+      const storageKey = 'allan-next-steps-v1';
+      const checklist = document.getElementById('checklist');
+      const items = Array.from(document.querySelectorAll('.item'));
+      const checks = Array.from(document.querySelectorAll('.item input[type="checkbox"]'));
+      const progressNumber = document.getElementById('progressNumber');
+      const progressText = document.getElementById('progressText');
+      const meterFill = document.getElementById('meterFill');
+      const copyOpenItems = document.getElementById('copyOpenItems');
+      const toggleCompleted = document.getElementById('toggleCompleted');
+      const resetChecks = document.getElementById('resetChecks');
+      const copyStatus = document.getElementById('copyStatus');
+      const filterButtons = Array.from(document.querySelectorAll('.filter-button'));
+      let activeFilter = 'all';
+      let hideCompleted = false;
+
+      function loadState() {
+        try {
+          return JSON.parse(localStorage.getItem(storageKey) || '{}');
+        } catch {
+          return {};
+        }
+      }
+
+      function saveState() {
+        const state = {};
+        items.forEach((item) => {
+          state[item.dataset.id] = item.querySelector('input').checked;
+        });
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      }
+
+      function applyState() {
+        const state = loadState();
+        items.forEach((item) => {
+          const checkbox = item.querySelector('input');
+          checkbox.checked = Boolean(state[item.dataset.id]);
+          item.dataset.done = String(checkbox.checked);
+        });
+      }
+
+      function updateProgress() {
+        const done = checks.filter((checkbox) => checkbox.checked).length;
+        const total = checks.length;
+        const percent = total ? Math.round((done / total) * 100) : 0;
+        progressNumber.textContent = done + '/' + total;
+        progressText.textContent = percent ? percent + '% complete' : 'Nothing checked yet.';
+        meterFill.style.width = percent + '%';
+      }
+
+      function updateVisibility() {
+        items.forEach((item) => {
+          const priorityMatch = activeFilter === 'all' || item.dataset.priority === activeFilter;
+          const completedMatch = !hideCompleted || item.dataset.done !== 'true';
+          item.dataset.hidden = String(!(priorityMatch && completedMatch));
+        });
+      }
+
+      function sync() {
+        updateProgress();
+        updateVisibility();
+      }
+
+      function openItemsText() {
+        const open = items.filter((item) => item.querySelector('input').checked === false);
+        return open.map((item) => {
+          const title = item.querySelector('h3').textContent.trim();
+          const body = item.querySelector('p').textContent.trim();
+          const priority = item.dataset.priority;
+          return '- [' + priority + '] ' + title + ': ' + body;
+        }).join('\n');
+      }
+
+      function copyText(value) {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(value);
+        }
+        const scratch = document.createElement('textarea');
+        scratch.value = value;
+        scratch.setAttribute('readonly', '');
+        scratch.style.position = 'fixed';
+        scratch.style.opacity = '0';
+        document.body.appendChild(scratch);
+        scratch.select();
+        document.execCommand('copy');
+        document.body.removeChild(scratch);
+        return Promise.resolve();
+      }
+
+      checks.forEach((checkbox) => {
+        checkbox.addEventListener('change', () => {
+          const item = checkbox.closest('.item');
+          item.dataset.done = String(checkbox.checked);
+          saveState();
+          sync();
+        });
+      });
+
+      filterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          activeFilter = button.dataset.filter;
+          filterButtons.forEach((option) => option.setAttribute('aria-pressed', String(option === button)));
+          sync();
+        });
+      });
+
+      copyOpenItems.addEventListener('click', async () => {
+        const text = openItemsText() || 'All Allan next steps are checked off.';
+        await copyText('Allan Career Hacks open next steps\n\n' + text);
+        copyStatus.textContent = 'Open items copied.';
+      });
+
+      toggleCompleted.addEventListener('click', () => {
+        hideCompleted = !hideCompleted;
+        toggleCompleted.setAttribute('aria-pressed', String(hideCompleted));
+        toggleCompleted.textContent = hideCompleted ? 'Show Completed' : 'Hide Completed';
+        sync();
+      });
+
+      resetChecks.addEventListener('click', () => {
+        checks.forEach((checkbox) => {
+          checkbox.checked = false;
+          checkbox.closest('.item').dataset.done = 'false';
+        });
+        saveState();
+        copyStatus.textContent = 'Checklist reset.';
+        sync();
+      });
+
+      applyState();
+      sync();
+    </script>
+  </body>
+</html>

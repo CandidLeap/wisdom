@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>Allan Career Hacks Updates</title>
+    <link rel="canonical" href="https://wisdom.candidleap.com/sign-up/">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #111818;
+        --muted: #52615f;
+        --line: #d9e4df;
+        --paper: #fbfdfb;
+        --wash: #e8f3ee;
+        --teal: #116b60;
+        --teal-dark: #0b4840;
+        --gold: #f5c244;
+        --rose: #c65d6b;
+        --shadow: 0 24px 70px rgba(17, 24, 24, 0.11);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          linear-gradient(135deg, rgba(245, 194, 68, 0.22), transparent 38%),
+          linear-gradient(225deg, rgba(198, 93, 107, 0.15), transparent 34%),
+          var(--wash);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 32px));
+        min-height: 100vh;
+        margin: 0 auto;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 18px;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin: 18px 0 0;
+        border: 1px solid rgba(17, 24, 24, 0.09);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.72);
+        box-shadow: 0 14px 34px rgba(17, 24, 24, 0.07);
+        padding: 8px 8px 8px 14px;
+        backdrop-filter: blur(16px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        padding-right: 10px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: #073932;
+        background: var(--gold);
+        font-weight: 900;
+      }
+
+      .nav-link {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        border-radius: 999px;
+        color: var(--teal-dark);
+        font-size: 0.9rem;
+        font-weight: 850;
+        padding: 0 13px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible {
+        background: rgba(17, 107, 96, 0.1);
+        outline: none;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 4px;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(360px, 440px);
+        gap: 72px;
+        align-items: center;
+        padding: 34px 0 64px;
+      }
+
+      .intro {
+        max-width: 620px;
+      }
+
+      .person {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+
+      .person img {
+        width: 86px;
+        height: 86px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 255, 255, 0.78);
+        box-shadow: 0 14px 34px rgba(17, 24, 24, 0.14);
+      }
+
+      .person-name {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .person-role {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      h1 {
+        max-width: 10ch;
+        margin: 0;
+        font-size: 86px;
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        max-width: 660px;
+        margin: 28px 0 0;
+        color: #2c3a38;
+        font-size: 25px;
+        line-height: 1.35;
+        font-weight: 650;
+      }
+
+      .quote {
+        margin: 34px 0 0;
+        padding-left: 20px;
+        border-left: 5px solid var(--rose);
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .panel {
+        background: rgba(255, 255, 255, 0.86);
+        border: 1px solid rgba(17, 24, 24, 0.08);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        padding: 34px;
+      }
+
+      .panel h2 {
+        margin: 0 0 8px;
+        font-size: 26px;
+        letter-spacing: 0;
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      form {
+        display: grid;
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        color: #24312f;
+        font-size: 14px;
+        font-weight: 850;
+      }
+
+      input {
+        width: 100%;
+        min-height: 54px;
+        border: 1px solid #bfd1cb;
+        border-radius: 8px;
+        padding: 0 15px;
+        font: inherit;
+        color: var(--ink);
+        background: #fff;
+      }
+
+      input:focus {
+        outline: 3px solid rgba(17, 107, 96, 0.18);
+        border-color: var(--teal);
+      }
+
+      .hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      button {
+        min-height: 56px;
+        border: 0;
+        border-radius: 8px;
+        padding: 0 20px;
+        color: #fff;
+        background: var(--teal);
+        font: inherit;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: var(--teal-dark);
+      }
+
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+
+      .note {
+        font-size: 14px;
+      }
+
+      .skill-note {
+        margin-top: 22px;
+        color: #2c3a38;
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      .skill-note a {
+        color: var(--teal-dark);
+        font-weight: 850;
+        text-underline-offset: 4px;
+      }
+
+      .status {
+        min-height: 24px;
+        color: var(--teal-dark);
+        font-weight: 800;
+      }
+
+      .status.error {
+        color: #9d2537;
+      }
+
+      footer {
+        padding: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .corn-link {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgba(17, 24, 24, 0.12);
+        border-radius: 999px;
+        background: #fff8d4;
+        box-shadow: 0 14px 30px rgba(17, 24, 24, 0.14);
+        font-size: 1.35rem;
+        margin: 0 18px 18px auto;
+        text-decoration: none;
+      }
+
+      @media (max-width: 860px) {
+        main {
+          grid-template-columns: 1fr;
+          align-items: start;
+          gap: 34px;
+          padding-top: 18px;
+        }
+
+        h1 {
+          max-width: 8ch;
+          font-size: 64px;
+        }
+
+        .panel {
+          max-width: none;
+        }
+
+        .lede {
+          font-size: 22px;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .page {
+          width: min(100% - 24px, 1120px);
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          border-radius: 8px;
+          gap: 10px;
+          top: 10px;
+        }
+
+        .nav {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+        }
+
+        .person {
+          align-items: flex-start;
+        }
+
+        .person img {
+          width: 72px;
+          height: 72px;
+        }
+
+        h1 {
+          max-width: 7ch;
+          font-size: 54px;
+        }
+
+        .lede {
+          font-size: 19px;
+        }
+
+        .panel {
+          padding: 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a class="brand" href="/allan/" aria-label="Allan Career Hacks">
+          <span class="brand-mark">A</span>
+          <span>Allan Career Hacks</span>
+        </a>
+        <nav class="nav" aria-label="Signup navigation">
+          <a class="nav-link" href="/allan/">Read the collection</a>
+          <a class="nav-link" href="/allan/wiki/">How it works</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div class="person">
+            <img src="https://cdn.prod.website-files.com/663bb357efba241b47d6930b/66bd6b4120f3b7cc917291ee_Allan-Leinwand.webp" alt="Allan Leinwand" width="86" height="86">
+            <div>
+              <p class="person-name">Allan Leinwand</p>
+              <p class="person-role">Career Hack collection</p>
+            </div>
+          </div>
+
+          <h1 id="page-title">Get Allan's career hacks to your inbox</h1>
+          <p class="lede">I'm collecting Allan's short career notes in one place. Join the list and I'll send new ones when I find them.</p>
+          <p class="quote">"Context turns information into impact."</p>
+          <p class="skill-note">I also made an Allan leadership skill you can run directly from Codex or Claude Code when you want advice on how to be a better leader and succeed at work.</p>
+          <p class="skill-note"><a href="https://github.com/CandidLeap/wisdom/tree/main/skills/allan-career-hacks">Or just get it directly,</a> no signup needed, from the public GitHub repo.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="form-title">
+          <h2 id="form-title">Sign up</h2>
+          <p>No drip campaign, no noise. Just the new Allan notes when there is something worth sending.</p>
+
+          <form id="signupForm" novalidate>
+            <label>
+              Name
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Jane Smith">
+            </label>
+
+            <label>
+              Email
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="jane@example.com" required>
+            </label>
+
+            <label class="hp">
+              Website
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </label>
+
+            <button id="submitButton" type="submit">Subscribe</button>
+            <p class="note">You can unsubscribe from the email footer anytime.</p>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </main>
+
+      <footer>
+        <span><a href="/allan/wiki/">How this works</a></span>
+      </footer>
+    </div>
+
+    <a class="corn-link" href="/allan/next-steps/" aria-label="Open next steps">🌽</a>
+
+    <script>
+      const form = document.getElementById("signupForm");
+      const statusEl = document.getElementById("status");
+      const button = document.getElementById("submitButton");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        statusEl.className = "status";
+        statusEl.textContent = "";
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        if (!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+          statusEl.className = "status error";
+          statusEl.textContent = "Please enter a valid email address.";
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = "Subscribing...";
+
+        try {
+          const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          const result = await response.json();
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.message || "Unable to subscribe right now.");
+          }
+
+          form.reset();
+          statusEl.textContent = "You are on the Allan Career Hacks list.";
+          button.textContent = "Subscribed";
+        } catch (error) {
+          statusEl.className = "status error";
+          statusEl.textContent = error.message || "Unable to subscribe right now.";
+          button.disabled = false;
+          button.textContent = "Subscribe";
+        }
+      });
+    </script>
+  </body>
+</html>
