@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <title>How This Was Built | Allan Career Hacks</title>
+    <meta name="description" content="A cleaned build journal showing how the Allan Career Hacks project was created through human-directed AI collaboration.">
+    <link rel="canonical" href="https://wisdom.candidleap.com/allan/how-built/">
+    <link rel="icon" href="https://cdn.prod.website-files.com/6852663ac5e075023e2e3648/6852663ac5e075023e2e3691_favicon.png">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #101513;
+        --muted: #52615f;
+        --paper: #fbfaf4;
+        --surface: #ffffff;
+        --soft: #eef7f3;
+        --teal: #116f64;
+        --green: #33a193;
+        --gold: #fec800;
+        --coral: #bf5a3b;
+        --line: #dbe4dc;
+        --shadow: 0 18px 44px rgba(16, 21, 19, 0.08);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+      }
+
+      a { color: inherit; }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(16, 21, 19, 0.1);
+        background: rgba(251, 250, 244, 0.9);
+        backdrop-filter: blur(16px);
+        box-shadow: 0 8px 24px rgba(16, 21, 19, 0.04);
+      }
+
+      .inner,
+      .header-inner {
+        width: calc(100% - 40px);
+        max-width: 1160px;
+        margin: 0 auto;
+      }
+
+      .header-inner {
+        display: flex;
+        min-height: 76px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 999px;
+        color: var(--ink);
+        font-weight: 860;
+        padding: 6px 8px 6px 0;
+        text-decoration: none;
+      }
+
+      .logo img {
+        display: block;
+        width: 66px;
+        height: auto;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+        border: 1px solid rgba(16, 21, 19, 0.1);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 10px 24px rgba(16, 21, 19, 0.05);
+        padding: 5px;
+      }
+
+      .nav a {
+        display: inline-flex;
+        min-height: 36px;
+        align-items: center;
+        border-radius: 999px;
+        color: var(--teal);
+        font-size: 0.9rem;
+        font-weight: 850;
+        padding: 0 13px;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible,
+      .nav a[aria-current="page"] {
+        background: var(--soft);
+        outline: none;
+      }
+
+      .hero {
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #fbfaf4 0%, #f5faf7 100%);
+      }
+
+      .hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: clamp(28px, 5vw, 56px);
+        align-items: center;
+        padding: clamp(46px, 7vw, 86px) 0 54px;
+      }
+
+      h1 {
+        max-width: 880px;
+        margin: 0;
+        font-size: clamp(2.6rem, 6vw, 5.7rem);
+        font-weight: 880;
+        letter-spacing: 0;
+        line-height: 0.95;
+      }
+
+      .lede {
+        max-width: 760px;
+        margin: 22px 0 0;
+        color: #2c3a38;
+        font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+        font-weight: 650;
+      }
+
+      .source-note {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .hero-card {
+        border: 1px solid rgba(16, 21, 19, 0.1);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .hero-card strong {
+        display: block;
+        font-size: 2.4rem;
+        line-height: 1;
+      }
+
+      .hero-card span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .section {
+        padding: 54px 0;
+      }
+
+      .section.soft {
+        background: #edf7f3;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        letter-spacing: 0;
+        line-height: 1.06;
+      }
+
+      h3 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      p + p {
+        margin-top: 14px;
+      }
+
+      .intro-grid,
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+      }
+
+      .tile {
+        border: 1px solid rgba(16, 21, 19, 0.1);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        padding: 22px;
+      }
+
+      .tile p,
+      .body-copy {
+        color: #2c3a38;
+        font-size: 1.02rem;
+      }
+
+      .quote-grid {
+        display: grid;
+        gap: 14px;
+      }
+
+      .direction {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr);
+        gap: 14px;
+        align-items: start;
+        border: 1px solid rgba(16, 21, 19, 0.1);
+        border-radius: 8px;
+        background: var(--surface);
+        padding: 18px;
+      }
+
+      .direction .moment {
+        color: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      blockquote {
+        margin: 0;
+        border-left: 4px solid var(--gold);
+        color: #17211d;
+        font-size: 1.02rem;
+        font-weight: 760;
+        line-height: 1.48;
+        padding-left: 14px;
+      }
+
+      .direction p {
+        color: var(--muted);
+      }
+
+      .check-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .check-list li {
+        border-left: 4px solid var(--green);
+        background: rgba(255, 255, 255, 0.74);
+        padding: 12px 14px;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .artifact-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .artifact-list a {
+        color: var(--teal);
+        font-weight: 850;
+        text-underline-offset: 4px;
+      }
+
+      .callout {
+        border: 1px solid rgba(191, 90, 59, 0.24);
+        border-left: 5px solid var(--coral);
+        border-radius: 8px;
+        background: #fffaf6;
+        padding: 20px;
+      }
+
+      code {
+        border-radius: 4px;
+        background: #e8f2ee;
+        color: #153f38;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 0.92em;
+        overflow-wrap: anywhere;
+        padding: 0.1em 0.28em;
+      }
+
+      .footer {
+        border-top: 1px solid var(--line);
+        padding: 26px 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .corn-link {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        border: 1px solid rgba(16, 21, 19, 0.12);
+        border-radius: 999px;
+        background: #fff8d4;
+        box-shadow: 0 14px 30px rgba(16, 21, 19, 0.14);
+        font-size: 1.35rem;
+        margin: 0 18px 18px auto;
+        text-decoration: none;
+      }
+
+      @media (max-width: 820px) {
+        .hero-inner,
+        .intro-grid,
+        .two-col,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .header-inner {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .nav {
+          width: 100%;
+          justify-content: flex-start;
+          overflow-x: auto;
+          border-radius: 8px;
+        }
+
+        .direction {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .inner,
+        .header-inner {
+          width: calc(100% - 28px);
+        }
+
+        .logo span { display: none; }
+        .nav a { font-size: 0.86rem; }
+        h1 { max-width: 9ch; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="/allan/">
+          <img src="https://cdn.prod.website-files.com/6852663ac5e075023e2e3648/6852663ac5e075023e2e384f_CL-Logo.svg" alt="Candid Leap">
+          <span>Wisdom</span>
+        </a>
+        <nav class="nav" aria-label="How built navigation">
+          <a href="/allan/">Collection</a>
+          <a href="/sign-up/">Sign up</a>
+          <a href="/allan/how-built/" aria-current="page">Build story</a>
+          <a href="/allan/wiki/">Wiki</a>
+          <a href="/allan/quotes.md">Quote bank</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner inner">
+          <div>
+            <h1>How This Was Built</h1>
+            <p class="lede">A practical case study in human-directed AI work: Hal set direction, taste, risk posture, and corrections; Codex executed, searched, coded, deployed, verified, and documented.</p>
+            <p class="source-note">Based on the copied Markdown transcript and repo history. The raw transcript is intentionally not stored in the public repo.</p>
+          </div>
+          <aside class="hero-card" aria-label="Project summary">
+            <strong>1 day</strong>
+            <span>From messy LinkedIn paste to noindexed site, signup, quote bank, skill, wiki, public repo, and deployment checks.</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner intro-grid">
+          <article class="tile">
+            <h2>Not A Swarm</h2>
+            <p>This was not a "tell an AI swarm to go build something and never touch it" project. The useful product came from repeated human judgment: where it should live, what should be private, what felt hard to read, which architecture was simpler, and when the output needed another pass.</p>
+          </article>
+          <article class="tile">
+            <h2>Very Much AI-Assisted</h2>
+            <p>Codex handled the implementation grind: extracting data, creating pages, wiring Cloudflare, building a Resend path, writing skills, running smoke tests, checking noindex headers, and cleaning the public Git history.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner">
+          <h2>Human Direction Moments</h2>
+          <div class="quote-grid">
+            <article class="direction">
+              <div class="moment">Source Material</div>
+              <blockquote>"How many posts start with \"Career Hack\" - I want to extract all of those posts."</blockquote>
+              <p>The work began with a raw LinkedIn HTML paste. Codex counted entries, separated loaded posts from placeholders, and extracted the initial Career Hack set.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Scope Correction</div>
+              <blockquote>"Nono I don't want this on /career-hacks on the main domain. Can you please undo that?"</blockquote>
+              <p>This changed the architecture before production. The project moved to an isolated Cloudflare Pages app on `wisdom.candidleap.com/allan`.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Search Privacy</div>
+              <blockquote>"Can you make sure this subdomain is noindexed?"</blockquote>
+              <p>The site got both page-level robots tags and response-level `X-Robots-Tag` headers, then those headers were verified live.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Completeness</div>
+              <blockquote>"Are you able to use the method of using Google Search as a search engine for twitter or linkedin to unearth more cards?"</blockquote>
+              <p>Codex searched public Google results, LinkedIn pages, and X sources, expanded the collection, and documented what public search can and cannot prove.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Readability</div>
+              <blockquote>"This is hard to read."</blockquote>
+              <p>The page moved from oversized quote cards to a calmer timeline with filters, tags, source badges, and better card rhythm.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Product Shape</div>
+              <blockquote>"Use linkedin and X logos. Let's go with the timeline view."</blockquote>
+              <p>That pushed the interface toward the current timeline-first reading experience with branded source buttons.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Architecture</div>
+              <blockquote>"Why even store in D1 and not just go straight to Resend?"</blockquote>
+              <p>The subscriber design simplified. Cloudflare handles the form and function; Resend stores contacts and unsubscribe state.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">AI Workflow</div>
+              <blockquote>"Ask Allan questions in Claude, Codex, ChatGPT, or in your LLM."</blockquote>
+              <p>The page gained an Ask Allan workflow and the repo gained a public single-file skill that reads the hosted quote bank.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Public Hygiene</div>
+              <blockquote>"Make sure it does not expose any private stuff that I do not want people to see."</blockquote>
+              <p>Codex audited the repo, avoided committing the raw transcript, removed personal defaults, and collapsed public history into a clean snapshot.</p>
+            </article>
+            <article class="direction">
+              <div class="moment">Polish</div>
+              <blockquote>"can we improve the design of the nav bar across the pages?"</blockquote>
+              <p>The final pass unified nav styling, fixed mobile behavior, and moved the hidden next-steps shortcut to the bottom of the page.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner split">
+          <div>
+            <h2>What Was Human Judgment</h2>
+            <ul class="check-list">
+              <li>Choosing a separate subdomain instead of touching the main site.</li>
+              <li>Deciding noindex mattered for the whole subdomain.</li>
+              <li>Calling out when the design was hard to read.</li>
+              <li>Choosing timeline view, topic filters, and source logos.</li>
+              <li>Questioning D1 and simplifying toward Resend.</li>
+              <li>Insisting the public repo expose no private information.</li>
+              <li>Framing the story as human-directed AI, not autopilot.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>What Was AI Execution</h2>
+            <ul class="check-list">
+              <li>Parsed the source paste and extracted Career Hack posts.</li>
+              <li>Searched public LinkedIn, Google, and X sources for missing cards.</li>
+              <li>Built static pages, functions, quote banks, and skills.</li>
+              <li>Created and deployed the Cloudflare Pages project.</li>
+              <li>Verified DNS, noindex headers, page counts, scripts, screenshots, and API behavior.</li>
+              <li>Committed, pushed, deployed, and cleaned public Git history.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section soft">
+        <div class="inner two-col">
+          <article class="tile">
+            <h2>The Correction Loop</h2>
+            <p>The project kept improving because visible output kept meeting human taste. A proposed main-domain route was stopped. The quote cards were redesigned. The most-recent card was made lighter, moved, then removed. Signup copy was rewritten. The corn shortcut stopped floating after it overlapped mobile content.</p>
+          </article>
+          <article class="tile">
+            <h2>Safety Choices</h2>
+            <p>The raw transcript stayed private. The public repo was audited for secrets. Cloudflare secrets are referenced by name only. Subscriber PII goes to Resend rather than a local public repo or D1 table. The subdomain remains noindexed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="inner two-col">
+          <div>
+            <h2>Artifacts</h2>
+            <ul class="artifact-list">
+              <li><a href="/allan/">Allan Career Hacks collection</a></li>
+              <li><a href="/allan/quotes.md">Markdown quote bank</a></li>
+              <li><a href="/allan/quotes.json">JSON quote bank</a></li>
+              <li><a href="/sign-up/">Signup page</a></li>
+              <li><a href="/allan/wiki/">System wiki</a></li>
+              <li><a href="https://github.com/CandidLeap/wisdom/tree/main/skills/allan-career-hacks">Public Allan skill on GitHub</a></li>
+              <li><a href="https://github.com/CandidLeap/wisdom/blob/main/docs/how-this-was-built.md">Markdown build journal</a></li>
+            </ul>
+          </div>
+          <div class="callout">
+            <h2>Future Pattern</h2>
+            <p>At the start of future projects, ask Codex to maintain a cleaned build journal as it works:</p>
+            <p><code>Keep a running build journal in docs/build-journal.md. Log major user instructions, decisions, AI actions, verification, and open questions. Do not include secrets or raw credentials.</code></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="inner">
+        <p>Built as a public-safe story from a private working transcript. The transcript itself stays out of the repo.</p>
+      </div>
+    </footer>
+    <a class="corn-link" href="/allan/next-steps/" aria-label="Open next steps">🌽</a>
+  </body>
+</html>

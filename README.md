@@ -5,9 +5,11 @@ Static Cloudflare Pages site for `wisdom.candidleap.com`.
 - `/` redirects to `/allan/`
 - `/allan/` contains Allan Leinwand's career hack quote collection
 - `/allan/wiki/` explains the system, infra, maintenance flow, and warnings
+- `/allan/how-built/` explains the human-directed AI build process
 - `/allan/quotes.md` and `/allan/quotes.json` are generated quote banks for AI/tools
 - `/sign-up/` lets readers subscribe to new Allan Career Hacks through Resend
 - `skills/allan-career-hacks/SKILL.md` is a public Codex/Claude Code skill that reads the hosted quote bank
+- `docs/how-this-was-built.md` is a public-safe build journal, not the raw transcript
 - The subdomain is noindexed via `X-Robots-Tag` headers and page-level robots meta tags.
 
 Subscriber flow:
