@@ -1,9 +1,21 @@
 {
   "sourcePage": "https://wisdom.candidleap.com/allan/",
-  "count": 24,
-  "latestDate": "2026-06-10",
-  "latestLabel": "Jun 10, 2026",
+  "count": 25,
+  "latestDate": "2026-06-23",
+  "latestLabel": "Jun 23, 2026",
   "posts": [
+    {
+      "id": "7475172521114386434",
+      "source": "LinkedIn",
+      "date": "2026-06-23",
+      "label": "Jun 23, 2026",
+      "tags": [
+        "Craft",
+        "Product"
+      ],
+      "text": "Career hack - Know one part of the tech stack in great detail. Be the go-to person. Patterns repeat up and down the stack, so once you truly understand something deeply, you start recognizing the same shapes everywhere else, and every new thing you learn comes faster. Depth in one place becomes leverage in all the others. 🙏",
+      "url": "https://www.linkedin.com/posts/aleinwand/career-hack-know-one-part-of-the-tech-stack-activity-7475172521114386434-rcTD"
+    },
     {
       "id": "7470425938145525761",
       "source": "LinkedIn",
